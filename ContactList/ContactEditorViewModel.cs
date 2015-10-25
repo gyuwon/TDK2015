@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Windows;
 using Flip;
 
 namespace ContactList
@@ -34,6 +36,20 @@ namespace ContactList
             set { SetValue(ref _editEmail, value); }
         }
 
-        public IReactiveCommand SaveCommand => null;
+        public IReactiveCommand SaveCommand => ReactiveCommand.Create(_ =>
+        {
+            var newModel = new Contact(_model.Id, _editName, _editEmail);
+
+            MainViewModel mainViewModel =
+                Application.Current.MainWindow.DataContext as MainViewModel;
+
+            foreach (ContactViewModel itemViewModel in
+                from item in mainViewModel.Contacts
+                where item.Model.Id == _model.Id
+                select item)
+            {
+                itemViewModel.Model = newModel;
+            }
+        });
     }
 }

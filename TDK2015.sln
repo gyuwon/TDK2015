@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList", "ContactList\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo 2", "Demo 2", "{A826E8D3-285E-4869-8D9B-FB3982FFC52E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList.Tests", "ContactList.Tests\ContactList.Tests.csproj", "{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{CC4A949A-9EC4-40DF-990D-6E5BCCCB4303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC4A949A-9EC4-40DF-990D-6E5BCCCB4303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC4A949A-9EC4-40DF-990D-6E5BCCCB4303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CC4A949A-9EC4-40DF-990D-6E5BCCCB4303} = {A826E8D3-285E-4869-8D9B-FB3982FFC52E}
+		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8} = {A826E8D3-285E-4869-8D9B-FB3982FFC52E}
 	EndGlobalSection
 EndGlobal

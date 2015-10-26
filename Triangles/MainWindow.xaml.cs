@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -9,33 +10,28 @@ namespace Triangles
 {
     public partial class MainWindow : Window
     {
-        private readonly List<Point> _buffer = new List<Point>();
-
         public MainWindow()
         {
             InitializeComponent();
 
-            _canvas.MouseDown += _canvas_MouseDown;
-            _clearButton.Click += (s, e) => _canvas.Children.Clear();
-        }
+            IObservable<Point> leftClicks =
+                from e in Observable.FromEventPattern<MouseButtonEventArgs>(
+                    _canvas, nameof(_canvas.MouseDown))
+                where e.EventArgs.LeftButton == MouseButtonState.Pressed
+                select e.EventArgs.GetPosition(_canvas);
 
-        private void _canvas_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                Point point = e.GetPosition(_canvas);
-                _buffer.Add(point);
-                if (_buffer.Count == 3)
+            IObservable<Polygon> triangles = leftClicks
+                .Buffer(3)
+                .Select((IList<Point> points) => new Polygon
                 {
-                    _canvas.Children.Add(new Polygon
-                    {
-                        Points = new PointCollection(_buffer),
-                        Stroke = Brushes.Black,
-                        StrokeThickness = 2
-                    });
-                    _buffer.Clear();
-                }
-            }
+                    Points = new PointCollection(points),
+                    Stroke = Brushes.Black,
+                    StrokeThickness = 2
+                });
+
+            triangles.Subscribe(t => _canvas.Children.Add(t));
+
+            _clearButton.Click += (s, e) => _canvas.Children.Clear();
         }
     }
 }

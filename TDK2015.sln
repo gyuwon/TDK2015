@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo 2", "Demo 2", "{A826E8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactList.Tests", "ContactList.Tests\ContactList.Tests.csproj", "{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo 1", "Demo 1", "{44F1BA9B-DC48-4AF0-9F98-7E9CEBDA2DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles", "Triangles\Triangles.csproj", "{CF606349-B0F9-4AE2-9C88-898F40E64276}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF606349-B0F9-4AE2-9C88-898F40E64276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF606349-B0F9-4AE2-9C88-898F40E64276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF606349-B0F9-4AE2-9C88-898F40E64276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF606349-B0F9-4AE2-9C88-898F40E64276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CC4A949A-9EC4-40DF-990D-6E5BCCCB4303} = {A826E8D3-285E-4869-8D9B-FB3982FFC52E}
 		{73FE8C7F-9E33-47F7-B730-F2BC5DE966C8} = {A826E8D3-285E-4869-8D9B-FB3982FFC52E}
+		{CF606349-B0F9-4AE2-9C88-898F40E64276} = {44F1BA9B-DC48-4AF0-9F98-7E9CEBDA2DE1}
 	EndGlobalSection
 EndGlobal
